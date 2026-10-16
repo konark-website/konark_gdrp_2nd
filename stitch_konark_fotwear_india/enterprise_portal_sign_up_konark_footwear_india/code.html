@@ -1,0 +1,758 @@
+<!DOCTYPE html><html class="dark" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+@layer base {
+  html, body { width: 100vw; margin: 0; padding: 0; background-color: #0b0e13; color: #e1e2ea; }
+  body { overscroll-behavior: none; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+}
+::-webkit-scrollbar { display: none; }
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f7df94 0%, #d4af37 45%, #aa7c11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gold-border {
+  border-color: rgba(212, 175, 55, 0.28);
+}
+.royal-glow {
+  box-shadow: 0 0 25px -5px rgba(42, 82, 190, 0.45);
+}
+.emerald-glow {
+  box-shadow: 0 0 20px -4px rgba(16, 185, 129, 0.35);
+}
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface": "#101319",
+        "surface-container-lowest": "#0b0e13",
+        "surface-container-low": "#191c21",
+        "surface-container": "#1d2025",
+        "surface-container-high": "#272a30",
+        "surface-container-highest": "#32353b",
+        "surface-bright": "#36393f",
+        "primary": "#b5c4ff",
+        "primary-container": "#2a52be",
+        "on-primary": "#00287b",
+        "secondary": "#9ad1cb",
+        "secondary-container": "#144f4b",
+        "emerald-accent": "#10b981",
+        "emerald-deep": "#059669",
+        "tertiary": "#e9c349",
+        "tertiary-container": "#cca730",
+        "on-surface": "#e1e2ea",
+        "on-surface-variant": "#c4c5d5",
+        "outline": "#8e909f",
+        "outline-variant": "#434653"
+      },
+      fontFamily: {
+        "display": ["Bodoni Moda", "serif"],
+        "headline": ["Bodoni Moda", "serif"],
+        "label": ["Space Grotesk", "sans-serif"],
+        "body": ["Manrope", "Inter", "sans-serif"]
+      }
+    }
+  }
+}
+</script></head><body class="bg-[#0b0e13] font-body text-on-surface flex flex-col min-h-screen selection:bg-primary-container selection:text-white">
+<!-- Top Navigation Bar (strictly NO back arrow, brand logo IMAGE_30, Home Page link) -->
+<header class="fixed top-0 w-full z-50 bg-[#101319]/90 backdrop-blur-xl border-b border-[#272a30]/80">
+<div class="max-w-6xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-2.5 group" data-path="curated-catalogue" href="https://stitch.google.com/preview/16551520363935004530?node-id=bb590b69c902401e9b51daae9b948e75">
+<div class="relative w-9 h-9 rounded-lg overflow-hidden bg-[#191c21] border border-[#d4af37]/30 p-0.5 flex items-center justify-center shadow-md">
+<img alt="Konark Footwear India Logo" class="h-full w-full object-contain filter drop-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVQpTSdt1NHnYmmfd3xNIbXO0ujUnZpug_GH56bpXpJPpMZk4lx5p2uAzCgKOJDPpNGubQAG5EK3rP8nEfqFNFeDWJ35PYY8uWZgbH32eTIjKvlxNvH-9A4MlA54eEXDlnmR1tyf3RLCpHPBd7SUZZPl3RAlxeOzk0qiqk1dkbqMwy1BWh3hdHRk_oWqHsvz-6o0PQ7wU-mxuKTFp4ZsP9EdRjibCnvmdIyXX2wYitUrQbhDFQatmqfuhWA1Ft1p7u8Y" decoding="async">
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-semibold text-xs sm:text-sm tracking-wider uppercase text-white group-hover:text-[#f7df94] transition-colors leading-none">KONARK FOOTWEAR INDIA</span>
+<span class="font-label text-[9px] sm:text-[10px] text-[#9ad1cb] tracking-[0.15em] uppercase mt-1">Enterprise Access &amp; Portal</span>
+</div>
+</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-3">
+<a class="h-9 px-3 rounded-md bg-[#191c21] hover:bg-[#272a30] border border-[#434653]/60 text-xs font-label uppercase tracking-wider text-on-surface flex items-center gap-1.5 transition-all shadow-sm" data-path="signup" href="https://stitch.google.com/preview/16551520363935004530?node-id=bb590b69c902401e9b51daae9b948e75"><span class="material-symbols-outlined text-[16px] text-[#10b981]">person_add</span>
+<span class="font-medium">Sign Up Page</span></a>
+<a class="h-9 w-9 rounded-md bg-[#191c21] border border-[#434653]/60 flex items-center justify-center text-[#9ad1cb] hover:text-white transition-colors" href="https://wa.me/918500970066" rel="noopener noreferrer" target="_blank" title="WhatsApp Support">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</a>
+</div>
+</div>
+</header>
+<main class="flex-1 w-full pt-20 pb-safe bg-[#0b0e13] flex flex-col items-center">
+<!-- Brand Intro & Crest -->
+<section class="w-full max-w-3xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-6 flex flex-col items-center text-center">
+<!-- Security Tag -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#191c21] border border-[#d4af37]/40 text-[#f7df94] text-[10px] sm:text-[11px] font-label font-medium uppercase tracking-[0.2em] mb-5 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-[#10b981]">verified_user</span>
+<span class="">Enterprise B2B, Vendor &amp; Internal Gateway</span>
+</div>
+<!-- Centered Logo Crest (IMAGE_30) -->
+<div class="w-full max-w-[200px] sm:max-w-[240px] mb-4 flex flex-col items-center">
+<div class="relative p-2 rounded-2xl bg-gradient-to-b from-[#1d2025] to-[#101319] border border-[#d4af37]/30 shadow-2xl">
+<img alt="Konark Footwear India Royal Crest" class="w-full h-auto object-contain filter drop-shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVQpTSdt1NHnYmmfd3xNIbXO0ujUnZpug_GH56bpXpJPpMZk4lx5p2uAzCgKOJDPpNGubQAG5EK3rP8nEfqFNFeDWJ35PYY8uWZgbH32eTIjKvlxNvH-9A4MlA54eEXDlnmR1tyf3RLCpHPBd7SUZZPl3RAlxeOzk0qiqk1dkbqMwy1BWh3hdHRk_oWqHsvz-6o0PQ7wU-mxuKTFp4ZsP9EdRjibCnvmdIyXX2wYitUrQbhDFQatmqfuhWA1Ft1p7u8Y" decoding="async">
+</div>
+</div>
+<h1 class="font-headline text-2xl sm:text-3xl font-bold tracking-wider uppercase text-white mb-2">
+      Konark Footwear India
+    </h1>
+<p class="font-label text-[11px] sm:text-xs uppercase tracking-[0.22em] text-[#9ad1cb] max-w-lg leading-relaxed">
+      Precision Insole Engineering &amp; B2B Export Portal — Est. 1870
+    </p>
+</section>
+<!-- Interactive Auth Container -->
+<section class="w-full max-w-xl md:max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 pb-14">
+<!-- Main Velvet Card -->
+<div class="w-full rounded-2xl bg-[#12151c] border border-[#272a30] shadow-[0_20px_50px_rgba(0,0,0,0.65)] overflow-hidden">
+<!-- Role Selector Tabs with fluid padding & 48px touch targets -->
+<div class="p-3 sm:p-4 bg-[#191c21]/90 border-b border-[#272a30]">
+<div class="flex items-center justify-between mb-2.5 px-1">
+<span class="font-label text-[10px] sm:text-[11px] uppercase tracking-widest text-[#9ad1cb] font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-[#f7df94]">workspace_premium</span>
+            Select Portal Access Role:
+          </span>
+<span class="font-label text-[10px] sm:text-[11px] text-on-surface-variant uppercase tracking-wider font-medium" id="activeRoleLabel">Distributor / Buyer</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2" role="tablist">
+<button class="role-btn min-h-[48px] py-2.5 px-2 rounded-lg text-center font-label text-[11px] sm:text-xs font-medium tracking-wider transition-all duration-200 border border-transparent bg-transparent text-on-surface-variant hover:text-white hover:bg-[#272a30]/50 flex sm:flex-col items-center justify-center gap-1.5 sm:gap-1 cursor-pointer" data-role="Admin" onclick="setRole('Admin', this)">
+<span class="material-symbols-outlined text-[18px] text-[#f7df94]">admin_panel_settings</span>
+<span class="leading-tight">Admin</span>
+</button>
+<button class="role-btn min-h-[48px] py-2.5 px-2 rounded-lg text-center font-label text-[11px] sm:text-xs font-semibold tracking-wider transition-all duration-200 border border-[#2a52be] bg-[#2a52be]/25 text-[#b5c4ff] shadow-sm flex sm:flex-col items-center justify-center gap-1.5 sm:gap-1 cursor-pointer" data-role="Customers" onclick="setRole('Customers', this)">
+<span class="material-symbols-outlined text-[18px] text-[#10b981]">storefront</span>
+<span class="leading-tight">Customers</span>
+</button>
+<button class="role-btn min-h-[48px] py-2.5 px-2 rounded-lg text-center font-label text-[11px] sm:text-xs font-medium tracking-wider transition-all duration-200 border border-transparent bg-transparent text-on-surface-variant hover:text-white hover:bg-[#272a30]/50 flex sm:flex-col items-center justify-center gap-1.5 sm:gap-1 cursor-pointer" data-role="Suppliers" onclick="setRole('Suppliers', this)">
+<span class="material-symbols-outlined text-[18px] text-[#9ad1cb]">precision_manufacturing</span>
+<span class="leading-tight">Suppliers</span>
+</button>
+<button class="role-btn min-h-[48px] py-2.5 px-2 rounded-lg text-center font-label text-[11px] sm:text-xs font-medium tracking-wider transition-all duration-200 border border-transparent bg-transparent text-on-surface-variant hover:text-white hover:bg-[#272a30]/50 flex sm:flex-col items-center justify-center gap-1.5 sm:gap-1 cursor-pointer" data-role="Employees" onclick="setRole('Employees', this)">
+<span class="material-symbols-outlined text-[18px] text-[#e9c349]">badge</span>
+<span class="leading-tight">Employees</span>
+</button>
+</div>
+</div>
+<!-- Sign In vs Sign Up Toggle Switch with fluid 48px target -->
+<div class="px-4 sm:px-6 pt-5">
+<div class="p-1 rounded-xl bg-[#0b0e13] border border-[#272a30] flex items-center gap-1">
+<button class="auth-mode-btn min-h-[48px] flex-1 py-2.5 rounded-lg font-label text-xs sm:text-[13px] uppercase tracking-wider font-semibold transition-all duration-200 bg-gradient-to-r from-[#2a52be] to-[#1e3a8a] text-white shadow-md flex items-center justify-center gap-2 cursor-pointer" id="tabSignInBtn" onclick="switchAuthMode('signin')">
+<span class="material-symbols-outlined text-[18px]">login</span>
+<span class="">Sign In</span>
+</button>
+<button class="auth-mode-btn min-h-[48px] flex-1 py-2.5 rounded-lg font-label text-xs sm:text-[13px] uppercase tracking-wider font-semibold transition-all duration-200 text-on-surface-variant hover:text-white flex items-center justify-center gap-2 cursor-pointer" id="tabSignUpBtn" onclick="switchAuthMode('signup')">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span class="">Sign Up / Register</span>
+</button>
+</div>
+</div>
+<!-- VIEW 1: SIGN IN VIEW -->
+<div class="p-4 sm:p-6 md:p-8 flex flex-col gap-5 sm:gap-6" id="signInView">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="font-label text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#9ad1cb]" id="loginRoleBadge">B2B Customer Authentication</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[10px] font-label uppercase bg-[#10b981]/15 text-[#10b981] border border-[#10b981]/30 font-medium">Active Tier 1</span>
+</div>
+<h2 class="font-headline text-xl sm:text-2xl text-white font-medium" id="loginHeading">Portal Authentication</h2>
+<p class="text-xs sm:text-[13px] text-on-surface-variant leading-relaxed" id="loginSubtitle">Authorized access for registered global distributors, OEM partners, and factory administrators.</p>
+</div>
+<form class="flex flex-col gap-4 sm:gap-5" id="loginForm" onsubmit="handleAuthSubmit(event)">
+<!-- Identifier Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium flex items-center justify-between" for="corporate-id">
+<span id="identifierLabel" class="">Work Email / Corporate ID / Mobile</span>
+<span class="text-[10px] sm:text-[11px] text-[#9ad1cb] lowercase font-normal" id="identifierHint">corporate ID / phone</span>
+</label>
+<div class="relative flex items-center bg-[#191c21] rounded-lg border border-[#434653]/60 focus-within:border-[#2a52be] focus-within:ring-1 focus-within:ring-[#2a52be] transition-all min-h-[48px]">
+<span class="material-symbols-outlined absolute left-3 text-[#8e909f] text-[18px]">badge</span>
+<input autocomplete="username" class="w-full bg-transparent pl-10 pr-4 py-3 min-h-[48px] text-xs sm:text-sm text-white placeholder:text-[#8e909f]/60 focus:outline-none font-body" id="corporate-id" name="corporate-id" placeholder="e.g. buyer@globalbrand.com or +91 98765 43210" required="" type="text">
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium" for="auth-key">Password</label>
+<button class="font-label text-[10px] sm:text-[11px] uppercase tracking-wider text-[#b5c4ff] underline underline-offset-4 hover:text-white transition-colors cursor-pointer py-1" onclick="togglePasswordModal(true)" type="button">
+                Forgot Password?
+              </button>
+</div>
+<div class="relative flex items-center bg-[#191c21] rounded-lg border border-[#434653]/60 focus-within:border-[#2a52be] focus-within:ring-1 focus-within:ring-[#2a52be] transition-all min-h-[48px]">
+<span class="material-symbols-outlined absolute left-3 text-[#8e909f] text-[18px]">lock</span>
+<input autocomplete="current-password" class="w-full bg-transparent pl-10 pr-11 py-3 min-h-[48px] text-xs sm:text-sm text-white placeholder:text-[#8e909f]/60 focus:outline-none font-body tracking-wider" id="auth-key" name="auth-key" placeholder="Enter secured enterprise key" required="" type="password">
+<button aria-label="Toggle password visibility" class="absolute right-2.5 text-[#8e909f] hover:text-white transition-colors p-2 cursor-pointer flex items-center justify-center" id="passwordEyeToggle" onclick="togglePasswordVisibility('auth-key', 'eyeIcon')" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eyeIcon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Keep me signed in with accessible touch area -->
+<div class="flex items-center gap-2.5 pt-1">
+<input class="w-4 h-4 rounded bg-[#191c21] border-[#434653] text-[#2a52be] focus:ring-0 cursor-pointer" id="remember-device" type="checkbox">
+<label class="text-xs sm:text-[13px] text-on-surface-variant cursor-pointer select-none font-label" for="remember-device">
+              Keep me signed in on this secure enterprise device
+            </label>
+</div>
+<!-- Submit CTA Button (Royal Blue with Emerald accents & fluid 48px touch height) -->
+<button class="w-full mt-2 min-h-[48px] py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#2a52be] via-[#1e3a8a] to-[#059669] hover:from-[#3b66df] hover:to-[#10b981] text-white font-label text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold flex items-center justify-center gap-2 transition-all shadow-lg royal-glow active:scale-[0.99] cursor-pointer" id="submitBtn" type="submit">
+<span class="">Sign In to Portal</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Authentication status toast (hidden by default) -->
+<div class="hidden p-3.5 rounded-xl bg-[#191c21] border border-[#2a52be] text-xs text-white flex items-center gap-2.5" id="authNotice">
+<span class="material-symbols-outlined text-[20px] text-[#10b981] animate-spin">sync</span>
+<span class="leading-snug font-label" id="authNoticeText">Connecting to Konark Secure Core...</span>
+</div>
+<!-- Quick Switch to Sign-Up -->
+<div class="pt-3 text-center border-t border-[#272a30]">
+<p class="text-xs sm:text-[13px] text-on-surface-variant font-body">
+            New partner, OEM client, vendor or staff?
+            <button class="text-[#f7df94] font-semibold underline underline-offset-2 ml-1 hover:text-white font-label cursor-pointer py-1" onclick="switchAuthMode('signup')" type="button">
+              Register Here with Mobile &amp; OTP
+            </button>
+</p>
+</div>
+</div>
+<!-- VIEW 2: SIGN UP / REGISTER WITH MOBILE & OTP -->
+<div class="hidden p-4 sm:p-6 md:p-8 flex flex-col gap-5 sm:gap-6" id="signUpView">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="font-label text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-[#10b981]" id="regRoleBadge">Register as B2B Customer</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[10px] font-label uppercase bg-[#f7df94]/15 text-[#f7df94] border border-[#f7df94]/30 font-medium">Instant OTP</span>
+</div>
+<h2 class="font-headline text-xl sm:text-2xl text-white font-medium">Create Portal Account</h2>
+<p class="text-xs sm:text-[13px] text-on-surface-variant leading-relaxed">
+            Register your enterprise profile with verified mobile number and OTP clearance.
+          </p>
+</div>
+<!-- Role Selector inside Registration -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium">Registration Role Category</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<button class="reg-role-chip min-h-[48px] py-2 px-2.5 rounded-lg border border-[#434653]/60 bg-[#191c21] text-xs font-label text-left hover:border-[#f7df94] transition-all flex items-center gap-1.5 text-on-surface-variant cursor-pointer" data-reg-role="Admin" onclick="setRegRole('Admin', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#f7df94]">admin_panel_settings</span>
+<span class="leading-tight">Admin <span class="text-[9px] text-[#8e909f] block">(Audit Req.)</span></span>
+</button>
+<button class="reg-role-chip min-h-[48px] py-2 px-2.5 rounded-lg border border-[#10b981] bg-[#10b981]/15 text-xs font-label text-left transition-all flex items-center gap-1.5 text-white cursor-pointer" data-reg-role="Customers" onclick="setRegRole('Customers', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#10b981]">storefront</span>
+<span class="leading-tight">Customer <span class="text-[9px] text-[#9ad1cb] block">(B2B Buyer)</span></span>
+</button>
+<button class="reg-role-chip min-h-[48px] py-2 px-2.5 rounded-lg border border-[#434653]/60 bg-[#191c21] text-xs font-label text-left hover:border-[#9ad1cb] transition-all flex items-center gap-1.5 text-on-surface-variant cursor-pointer" data-reg-role="Suppliers" onclick="setRegRole('Suppliers', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#9ad1cb]">precision_manufacturing</span>
+<span class="leading-tight">Supplier <span class="text-[9px] text-[#8e909f] block">(Raw Mat)</span></span>
+</button>
+<button class="reg-role-chip min-h-[48px] py-2 px-2.5 rounded-lg border border-[#434653]/60 bg-[#191c21] text-xs font-label text-left hover:border-[#b5c4ff] transition-all flex items-center gap-1.5 text-on-surface-variant cursor-pointer" data-reg-role="Employees" onclick="setRegRole('Employees', this)" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#b5c4ff]">badge</span>
+<span class="leading-tight">Employee <span class="text-[9px] text-[#8e909f] block">(Staff &amp; QC)</span></span>
+</button>
+</div>
+</div>
+<form class="flex flex-col gap-4 sm:gap-5" id="registrationForm" onsubmit="handleRegistrationSubmit(event)">
+<!-- Full Name & Entity -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium" for="reg-fullname">Full Name</label>
+<div class="relative flex items-center bg-[#191c21] rounded-lg border border-[#434653]/60 focus-within:border-[#10b981] min-h-[48px]">
+<span class="material-symbols-outlined absolute left-3 text-[#8e909f] text-[18px]">person</span>
+<input class="w-full bg-transparent pl-10 pr-3 py-3 min-h-[48px] text-xs sm:text-sm text-white placeholder:text-[#8e909f]/60 focus:outline-none font-body" id="reg-fullname" placeholder="John Doe" required="" type="text">
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium" for="reg-entity" id="entityLabel">Company / Firm Name</label>
+<div class="relative flex items-center bg-[#191c21] rounded-lg border border-[#434653]/60 focus-within:border-[#10b981] min-h-[48px]">
+<span class="material-symbols-outlined absolute left-3 text-[#8e909f] text-[18px]">business</span>
+<input class="w-full bg-transparent pl-10 pr-3 py-3 min-h-[48px] text-xs sm:text-sm text-white placeholder:text-[#8e909f]/60 focus:outline-none font-body" id="reg-entity" placeholder="Global Footwear Ltd." required="" type="text">
+</div>
+</div>
+</div>
+<!-- Mobile Number with +91 Country Code and Send OTP -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium flex items-center justify-between flex-wrap gap-1" for="reg-mobile">
+<span class="">Mobile Number for OTP Verification</span>
+<span class="text-[10px] sm:text-[11px] text-[#10b981] font-label font-normal">SMS / WhatsApp OTP</span>
+</label>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+<div class="flex items-center gap-2 flex-1">
+<div class="flex items-center justify-center bg-[#191c21] rounded-lg border border-[#434653]/60 px-3 min-h-[48px] text-xs sm:text-sm font-label text-white shrink-0">
+<span class="text-[#f7df94] font-semibold mr-1.5">🇮🇳</span> +91
+</div>
+<div class="relative flex-1 flex items-center bg-[#191c21] rounded-lg border border-[#434653]/60 focus-within:border-[#10b981] min-h-[48px]">
+<input class="w-full bg-transparent px-3 py-3 min-h-[48px] text-xs sm:text-sm text-white placeholder:text-[#8e909f]/60 focus:outline-none font-body tracking-wider" id="reg-mobile" maxlength="10" pattern="[0-9]{10}" placeholder="98765 43210" required="" type="tel">
+</div>
+</div>
+<button class="min-h-[48px] px-4 py-2.5 rounded-lg bg-[#2a52be] hover:bg-[#3b66df] text-white text-xs sm:text-sm font-label uppercase font-medium tracking-wider shrink-0 transition-all flex items-center justify-center gap-1.5 cursor-pointer" id="sendOtpBtn" onclick="sendRegistrationOtp()" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span id="sendOtpBtnText" class="">Send OTP</span>
+</button>
+</div>
+</div>
+<!-- OTP Input 6 Digits Container -->
+<div class="p-3.5 sm:p-4 rounded-xl bg-[#191c21] border border-[#272a30] flex flex-col gap-3" id="otpBoxSection">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<span class="font-label text-[10px] sm:text-[11px] uppercase tracking-wider text-[#9ad1cb] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#10b981]">security</span>
+                Enter 6-Digit OTP Verification Code
+              </span>
+<button class="text-[10px] sm:text-[11px] font-label text-[#f7df94] hover:underline cursor-pointer py-1" id="resendOtpBtn" onclick="resendOtpCountdown()" type="button">
+                Resend OTP (30s)
+              </button>
+</div>
+<div class="grid grid-cols-6 gap-1.5 sm:gap-2.5 max-w-md mx-auto w-full">
+<input class="otp-input w-full min-h-[48px] text-center text-lg sm:text-xl font-bold bg-[#0b0e13] border border-[#434653] rounded-lg text-white focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] focus:outline-none" maxlength="1" pattern="[0-9]" type="text">
+<input class="otp-input w-full min-h-[48px] text-center text-lg sm:text-xl font-bold bg-[#0b0e13] border border-[#434653] rounded-lg text-white focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] focus:outline-none" maxlength="1" pattern="[0-9]" type="text">
+<input class="otp-input w-full min-h-[48px] text-center text-lg sm:text-xl font-bold bg-[#0b0e13] border border-[#434653] rounded-lg text-white focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] focus:outline-none" maxlength="1" pattern="[0-9]" type="text">
+<input class="otp-input w-full min-h-[48px] text-center text-lg sm:text-xl font-bold bg-[#0b0e13] border border-[#434653] rounded-lg text-white focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] focus:outline-none" maxlength="1" pattern="[0-9]" type="text">
+<input class="otp-input w-full min-h-[48px] text-center text-lg sm:text-xl font-bold bg-[#0b0e13] border border-[#434653] rounded-lg text-white focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] focus:outline-none" maxlength="1" pattern="[0-9]" type="text">
+<input class="otp-input w-full min-h-[48px] text-center text-lg sm:text-xl font-bold bg-[#0b0e13] border border-[#434653] rounded-lg text-white focus:border-[#10b981] focus:ring-1 focus:ring-[#10b981] focus:outline-none" maxlength="1" pattern="[0-9]" type="text">
+</div>
+<div class="flex items-center justify-between text-[11px] sm:text-xs text-[#8e909f] flex-wrap gap-1">
+<span id="otpStatusHint" class="">Demo clearance OTP sent to registered mobile</span>
+<button class="text-xs font-label text-[#10b981] font-semibold hover:underline cursor-pointer py-1" onclick="quickFillOtp()" type="button">Auto-fill Demo OTP</button>
+</div>
+</div>
+<!-- Set New Password & Confirm Password -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium" for="reg-new-pwd">Set Password</label>
+<div class="relative flex items-center bg-[#191c21] rounded-lg border border-[#434653]/60 focus-within:border-[#10b981] min-h-[48px]">
+<input class="w-full bg-transparent px-3.5 py-3 min-h-[48px] text-xs sm:text-sm text-white placeholder:text-[#8e909f]/60 focus:outline-none font-body" id="reg-new-pwd" oninput="checkPasswordStrength(this.value)" placeholder="Min 8 characters" required="" type="password">
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[11px] sm:text-xs uppercase tracking-wider text-on-surface font-medium" for="reg-confirm-pwd">Confirm Password</label>
+<div class="relative flex items-center bg-[#191c21] rounded-lg border border-[#434653]/60 focus-within:border-[#10b981] min-h-[48px]">
+<input class="w-full bg-transparent px-3.5 py-3 min-h-[48px] text-xs sm:text-sm text-white placeholder:text-[#8e909f]/60 focus:outline-none font-body" id="reg-confirm-pwd" placeholder="Re-enter password" required="" type="password">
+</div>
+</div>
+</div>
+<!-- Password Strength Bar -->
+<div class="flex items-center gap-2">
+<div class="h-1.5 flex-1 rounded bg-[#272a30] overflow-hidden">
+<div class="h-full bg-[#10b981] transition-all duration-300 w-2/3" id="pwdStrengthBar"></div>
+</div>
+<span class="font-label text-[10px] sm:text-[11px] text-[#10b981] uppercase tracking-wider font-medium" id="pwdStrengthText">Strong Security</span>
+</div>
+<!-- Complete Registration CTA with 48px height -->
+<button class="w-full mt-2 min-h-[48px] py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#10b981] via-[#059669] to-[#2a52be] hover:from-[#34d399] hover:to-[#3b66df] text-white font-label text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold flex items-center justify-center gap-2 transition-all shadow-lg emerald-glow active:scale-[0.99] cursor-pointer" id="regSubmitBtn" type="submit">
+<span class="">Complete Registration &amp; Set Password</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</button>
+</form>
+<div class="pt-3 text-center border-t border-[#272a30]">
+<p class="text-xs sm:text-[13px] text-on-surface-variant font-body">
+            Already have an active corporate account?
+            <button class="text-[#b5c4ff] font-semibold underline underline-offset-2 ml-1 hover:text-white font-label cursor-pointer py-1" onclick="switchAuthMode('signin')" type="button">
+              Sign In Instead
+            </button>
+</p>
+</div>
+</div>
+<!-- Trust Badges Bar (SSL, SATRA, ISO, GDPR) -->
+<div class="p-3.5 sm:p-4 bg-[#0e1117] border-t border-[#272a30] flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-[#191c21] border border-[#272a30] text-[10px] sm:text-[11px] font-label text-[#9ad1cb] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-[#10b981]">shield</span>
+<span class="">256-Bit SSL</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-[#191c21] border border-[#272a30] text-[10px] sm:text-[11px] font-label text-[#9ad1cb] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-[#f7df94]">fact_check</span>
+<span class="">SATRA QA Verified</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-[#191c21] border border-[#272a30] text-[10px] sm:text-[11px] font-label text-[#9ad1cb] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-[#b5c4ff]">workspace_premium</span>
+<span class="">ISO 9001 Certified</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-[#191c21] border border-[#272a30] text-[10px] sm:text-[11px] font-label text-[#9ad1cb] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px] text-white">gavel</span>
+<span class="">GDPR Compliant</span>
+</div>
+</div>
+<!-- Instant Clearance WhatsApp Desk Banner with 48px height -->
+<div class="p-4 sm:p-5 bg-gradient-to-r from-[#144f4b]/30 via-[#191c21] to-[#144f4b]/30 border-t border-[#144f4b]/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex flex-col text-left">
+<span class="font-label text-[10px] sm:text-[11px] uppercase tracking-wider text-[#10b981] font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></span>
+            Instant Clearance
+          </span>
+<span class="text-xs sm:text-sm font-medium text-white">Export &amp; Portal WhatsApp Desk</span>
+</div>
+<a class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-[#10b981] hover:bg-[#059669] text-[#00201e] font-semibold text-[11px] sm:text-xs font-label uppercase tracking-wider transition-colors min-h-[48px] shadow-sm cursor-pointer" href="https://wa.me/918500970066" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span class="">+91 85009 70066</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Interactive Forget Password Modal / Reset with Mobile & OTP -->
+<div class="fixed inset-0 z-50 bg-[#0b0e13]/80 backdrop-blur-md hidden flex items-center justify-center p-4" id="pwdResetModal">
+<div class="w-full max-w-md bg-[#12151c] border border-[#d4af37]/40 rounded-2xl p-6 sm:p-7 shadow-2xl flex flex-col gap-4 relative">
+<div class="flex items-center justify-between border-b border-[#272a30] pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#f7df94] text-[22px]">lock_reset</span>
+<h3 class="font-headline text-lg font-medium text-white">Enterprise Password Recovery</h3>
+</div>
+<button class="text-on-surface-variant hover:text-white p-1 rounded-lg hover:bg-[#272a30]" onclick="togglePasswordModal(false)" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+        Verify identity via your registered Mobile Number / Corporate Email to dispatch an instant reset OTP and set a new password directly.
+      </p>
+<div class="flex flex-col gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] uppercase tracking-wider text-[#9ad1cb]" for="recovery-contact">
+            Registered Mobile or Corporate Email
+          </label>
+<div class="flex gap-2">
+<input class="flex-1 bg-[#191c21] border border-[#434653]/60 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#2a52be]" id="recovery-contact" placeholder="+91 98765 43210 or buyer@company.com" type="text">
+<button class="px-3 py-2.5 rounded-lg bg-[#2a52be] hover:bg-[#3b66df] text-white text-[11px] font-label uppercase font-medium tracking-wider shrink-0" onclick="sendRecoveryOtp()" type="button">
+              Send OTP
+            </button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5" id="recoveryOtpGroup">
+<label class="font-label text-[10px] uppercase tracking-wider text-[#9ad1cb]">
+            6-Digit OTP Received
+          </label>
+<input class="w-full bg-[#191c21] border border-[#434653]/60 rounded-lg px-3.5 py-2.5 text-xs text-white font-label tracking-widest text-center focus:outline-none focus:border-[#10b981]" id="recovery-otp" maxlength="6" placeholder="• • • • • •" type="text">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-[10px] uppercase tracking-wider text-[#9ad1cb]" for="recovery-new-password">
+            New Password
+          </label>
+<input class="w-full bg-[#191c21] border border-[#434653]/60 rounded-lg px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-[#10b981]" id="recovery-new-password" placeholder="Create strong enterprise password" type="password">
+</div>
+</div>
+<div class="flex flex-col gap-2.5 pt-2">
+<button class="w-full py-3 rounded-xl bg-gradient-to-r from-[#2a52be] to-[#10b981] text-white font-label text-xs uppercase tracking-widest font-semibold hover:opacity-95 transition-all shadow-md" onclick="submitRecovery()" type="button">
+          Verify OTP &amp; Update Password
+        </button>
+<button class="w-full py-2 text-center font-label text-xs text-[#8e909f] hover:text-white tracking-wider uppercase transition-colors" onclick="togglePasswordModal(false)" type="button">
+          Cancel
+        </button>
+</div>
+<div class="text-[10px] text-on-surface-variant text-center pt-1 border-t border-[#272a30]">
+        Immediate factory floor unlock assistance: 
+        <a class="text-[#10b981] font-medium underline ml-1" href="https://wa.me/918500970066" target="_blank">+91 85009 70066</a>
+</div>
+</div>
+</div>
+<!-- Editorial Brand Footer matching Home Page (SCREEN_12) -->
+<footer class="w-full bg-[#0e1117] border-t border-[#272a30] text-on-surface py-12 sm:py-16 px-6 sm:px-8 mt-auto">
+<div class="max-w-4xl mx-auto flex flex-col gap-10">
+<!-- Brand & Description with IMAGE_30 -->
+<div class="flex flex-col sm:flex-row sm:items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#191c21] border border-[#d4af37]/40 p-1 flex items-center justify-center shrink-0">
+<img alt="Konark Footwear Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVQpTSdt1NHnYmmfd3xNIbXO0ujUnZpug_GH56bpXpJPpMZk4lx5p2uAzCgKOJDPpNGubQAG5EK3rP8nEfqFNFeDWJ35PYY8uWZgbH32eTIjKvlxNvH-9A4MlA54eEXDlnmR1tyf3RLCpHPBd7SUZZPl3RAlxeOzk0qiqk1dkbqMwy1BWh3hdHRk_oWqHsvz-6o0PQ7wU-mxuKTFp4ZsP9EdRjibCnvmdIyXX2wYitUrQbhDFQatmqfuhWA1Ft1p7u8Y">
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-headline tracking-[0.2em] text-sm sm:text-base uppercase text-white font-bold">
+            Konark Footwear India
+          </span>
+<p class="text-[11px] sm:text-xs text-on-surface-variant leading-relaxed max-w-2xl">
+            Autonomous Footwear &amp; Insole Component Engineering. Trusted partner to leading industrial, formal, and athletic footwear exporters across 32 countries.
+          </p>
+</div>
+</div>
+<!-- Factory & Office Address with Google Maps link & Direct Contact Info -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-xl bg-[#191c21]/70 border border-[#272a30]">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#f7df94] shrink-0 mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-wider text-[#9ad1cb] font-semibold">Registered Factory &amp; Office</span>
+<a class="text-xs text-on-surface hover:text-[#f7df94] transition-colors leading-relaxed" href="https://maps.google.com/?q=KH+No.+215/216/14,+Extended+Lal+Dora,+Abadi+of+Mundka,+Delhi+-+110041" rel="noopener noreferrer" target="_blank">
+              KH No. 215/216/14, Situated at Extended Lal Dora, Abadi of Mundka, Delhi - 110041, New Delhi, India ↗
+            </a>
+</div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-[#10b981] shrink-0 mt-0.5">contact_support</span>
+<div class="flex flex-col">
+<span class="font-label text-[10px] uppercase tracking-wider text-[#9ad1cb] font-semibold">Direct Institutional Desk</span>
+<div class="flex flex-col gap-0.5 text-xs">
+<a class="text-on-surface hover:text-[#10b981] transition-colors" href="mailto:konarkfootwearindia@gmail.com">konarkfootwearindia@gmail.com</a>
+<a class="text-[#10b981] font-semibold hover:underline" href="tel:+918500970066">+91 85009 70066</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Media Icons (Colored & matching Home Page) -->
+<div class="flex flex-col gap-3">
+<span class="font-label text-[10px] sm:text-[11px] uppercase tracking-widest text-[#9ad1cb] font-medium">Export Network &amp; Broadcasts</span>
+<div class="flex items-center gap-3 sm:gap-4">
+<!-- Instagram -->
+<a aria-label="Instagram" class="w-11 h-11 rounded-lg flex items-center justify-center bg-[#e1306c]/15 border border-[#e1306c]/40 hover:bg-[#e1306c] hover:text-white text-[#e1306c] transition-all" href="https://instagram.com/konark.insole?mdxt=MTh3ZjEzdDM1bXYxcA%3D%3D&amp;utm_source=qr" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</a>
+<!-- Facebook -->
+<a aria-label="Facebook" class="w-11 h-11 rounded-lg flex items-center justify-center bg-[#1877f2]/15 border border-[#1877f2]/40 hover:bg-[#1877f2] hover:text-white text-[#1877f2] transition-all" href="https://www.facebook.com/share/1PW8aWRULp/" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<!-- YouTube -->
+<a aria-label="YouTube" class="w-11 h-11 rounded-lg flex items-center justify-center bg-[#ff0000]/15 border border-[#ff0000]/40 hover:bg-[#ff0000] hover:text-white text-[#ff0000] transition-all" href="https://youtube.com/@konarkfootwearindia" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">smart_display</span>
+</a>
+<!-- WhatsApp Support -->
+<a aria-label="WhatsApp Support" class="w-11 h-11 rounded-lg flex items-center justify-center bg-[#25d366]/15 border border-[#25d366]/40 hover:bg-[#25d366] hover:text-[#00201e] text-[#25d366] transition-all" href="https://wa.me/918500970066" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+</a>
+</div>
+</div>
+<!-- Footer Policy Links -->
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-[10px] sm:text-[11px] uppercase font-label tracking-widest text-on-surface-variant pt-2 border-t border-[#272a30]">
+<a class="hover:text-white transition-colors" href="https://stitch.google.com/preview/16551520363935004530?node-id=bb590b69c902401e9b51daae9b948e75">Sign Up Page</a>
+<a class="hover:text-white transition-colors" href="#">GDPR Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms &amp; Conditions</a>
+<a class="hover:text-white transition-colors" href="#">Export Licensing</a>
+</div>
+<!-- Copyright & Back to Top -->
+<div class="flex items-center justify-between text-[10px] sm:text-[11px] font-label text-on-surface-variant tracking-wider">
+<span class="">© 1870–2025 Konark Footwear India Pvt. Ltd.</span>
+<button class="flex items-center gap-1 text-[#f7df94] hover:text-white transition-colors uppercase tracking-widest text-[9px] sm:text-[10px] cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button">
+<span class="">Top</span>
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Floating Back-to-Top Button -->
+<button aria-label="Scroll back to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-[#2a52be] text-white shadow-2xl border border-[#b5c4ff]/30 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95" id="floatingBackToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" type="button">
+<span class="material-symbols-outlined text-[20px]">keyboard_arrow_up</span>
+</button>
+</main>
+<script>
+  let currentRole = 'Customers';
+  let currentRegRole = 'Customers';
+
+  function setRole(role, btnElement) {
+    currentRole = role;
+    document.querySelectorAll('.role-btn').forEach(btn => {
+      btn.className = 'role-btn py-2 px-1.5 rounded-lg text-center font-label text-[11px] font-medium tracking-wider transition-all duration-200 border border-transparent bg-transparent text-on-surface-variant hover:text-white hover:bg-[#272a30]/50';
+    });
+
+    btnElement.className = 'role-btn py-2 px-1.5 rounded-lg text-center font-label text-[11px] font-semibold tracking-wider transition-all duration-200 border border-[#2a52be] bg-[#2a52be]/25 text-[#b5c4ff] shadow-sm';
+
+    const roleLabel = document.getElementById('activeRoleLabel');
+    const loginBadge = document.getElementById('loginRoleBadge');
+    const loginHeading = document.getElementById('loginHeading');
+    const loginSubtitle = document.getElementById('loginSubtitle');
+    const idLabel = document.getElementById('identifierLabel');
+    const idHint = document.getElementById('identifierHint');
+
+    if (role === 'Admin') {
+      roleLabel.textContent = 'Factory & Portal Admin';
+      loginBadge.textContent = 'Master Admin Clearance';
+      loginHeading.textContent = 'Admin Console Authorization';
+      loginSubtitle.textContent = 'Restricted cryptographic login for verified plant executives and systems admins.';
+      idLabel.textContent = 'Admin Email / Master UID';
+      idHint.textContent = 'root / security ID';
+    } else if (role === 'Customers') {
+      roleLabel.textContent = 'Distributor / Buyer';
+      loginBadge.textContent = 'B2B Customer Authentication';
+      loginHeading.textContent = 'Client Portal Sign In';
+      loginSubtitle.textContent = 'Authorized access for registered global footwear distributors, wholesale buyers, and OEM partners.';
+      idLabel.textContent = 'Work Email / Registered Mobile';
+      idHint.textContent = 'corporate ID / phone';
+    } else if (role === 'Suppliers') {
+      roleLabel.textContent = 'Vendor / Supplier';
+      loginBadge.textContent = 'Supplier Procurement Portal';
+      loginHeading.textContent = 'Vendor Portal Authorization';
+      loginSubtitle.textContent = 'Access for raw material suppliers (EVA, PU sheets, fabrics, carbon shanks & tooling dies).';
+      idLabel.textContent = 'Vendor Code / Mobile Number';
+      idHint.textContent = 'supplier GST / ID';
+    } else if (role === 'Employees') {
+      roleLabel.textContent = 'Factory Staff & QC';
+      loginBadge.textContent = 'Internal Staff Gateway';
+      loginHeading.textContent = 'Employee & QC Staff Access';
+      loginSubtitle.textContent = 'Internal portal for production line supervisors, quality inspectors, and logistics operators.';
+      idLabel.textContent = 'Employee Badge ID / Mobile';
+      idHint.textContent = 'EMP-ID / mobile';
+    }
+  }
+
+  function setRegRole(role, btnElement) {
+    currentRegRole = role;
+    document.querySelectorAll('.reg-role-chip').forEach(btn => {
+      btn.className = 'reg-role-chip py-2 px-2 rounded-lg border border-[#434653]/60 bg-[#191c21] text-xs font-label text-left hover:border-[#f7df94] transition-all flex items-center gap-1.5 text-on-surface-variant';
+    });
+    btnElement.className = 'reg-role-chip py-2 px-2 rounded-lg border border-[#10b981] bg-[#10b981]/15 text-xs font-label text-left transition-all flex items-center gap-1.5 text-white';
+
+    const regBadge = document.getElementById('regRoleBadge');
+    const entityLabel = document.getElementById('entityLabel');
+
+    if (role === 'Admin') {
+      regBadge.textContent = 'Register for Admin Audit (Approval Req.)';
+      entityLabel.textContent = 'Department / Branch Designation';
+    } else if (role === 'Customers') {
+      regBadge.textContent = 'Register as B2B Buyer / Distributor';
+      entityLabel.textContent = 'Company / Footwear Brand';
+    } else if (role === 'Suppliers') {
+      regBadge.textContent = 'Register as Raw Material Vendor';
+      entityLabel.textContent = 'Supply Enterprise / Vendor Name';
+    } else if (role === 'Employees') {
+      regBadge.textContent = 'Register as Factory Staff / QC';
+      entityLabel.textContent = 'Department / Factory Unit';
+    }
+  }
+
+  function switchAuthMode(mode) {
+    const signInView = document.getElementById('signInView');
+    const signUpView = document.getElementById('signUpView');
+    const tabSignInBtn = document.getElementById('tabSignInBtn');
+    const tabSignUpBtn = document.getElementById('tabSignUpBtn');
+
+    if (mode === 'signup') {
+      signInView.classList.add('hidden');
+      signUpView.classList.remove('hidden');
+      tabSignUpBtn.className = 'auth-mode-btn flex-1 py-2.5 rounded-lg font-label text-xs uppercase tracking-wider font-semibold transition-all duration-200 bg-gradient-to-r from-[#10b981] to-[#059669] text-white shadow-md flex items-center justify-center gap-1.5';
+      tabSignInBtn.className = 'auth-mode-btn flex-1 py-2.5 rounded-lg font-label text-xs uppercase tracking-wider font-semibold transition-all duration-200 text-on-surface-variant hover:text-white flex items-center justify-center gap-1.5';
+    } else {
+      signUpView.classList.add('hidden');
+      signInView.classList.remove('hidden');
+      tabSignInBtn.className = 'auth-mode-btn flex-1 py-2.5 rounded-lg font-label text-xs uppercase tracking-wider font-semibold transition-all duration-200 bg-gradient-to-r from-[#2a52be] to-[#1e3a8a] text-white shadow-md flex items-center justify-center gap-1.5';
+      tabSignUpBtn.className = 'auth-mode-btn flex-1 py-2.5 rounded-lg font-label text-xs uppercase tracking-wider font-semibold transition-all duration-200 text-on-surface-variant hover:text-white flex items-center justify-center gap-1.5';
+    }
+  }
+
+  function togglePasswordVisibility(inputId, iconId) {
+    const input = document.getElementById(inputId);
+    const icon = document.getElementById(iconId);
+    if (!input || !icon) return;
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.textContent = 'visibility_off';
+    } else {
+      input.type = 'password';
+      icon.textContent = 'visibility';
+    }
+  }
+
+  function togglePasswordModal(show) {
+    const modal = document.getElementById('pwdResetModal');
+    if (!modal) return;
+    if (show) modal.classList.remove('hidden');
+    else modal.classList.add('hidden');
+  }
+
+  function handleAuthSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submitBtn');
+    const notice = document.getElementById('authNotice');
+    const noticeText = document.getElementById('authNoticeText');
+
+    btn.disabled = true;
+    btn.classList.add('opacity-75');
+    notice.classList.remove('hidden');
+    noticeText.textContent = 'Verifying credentials with Konark Core (' + currentRole + ' tier)...';
+
+    setTimeout(() => {
+      noticeText.textContent = 'Clearance granted! Launching secure enterprise catalog session...';
+      setTimeout(() => {
+        window.location.href = 'https://stitch.google.com/preview/16551520363935004530?node-id=bb590b69c902401e9b51daae9b948e75';
+      }, 700);
+    }, 1100);
+  }
+
+  function sendRegistrationOtp() {
+    const mobile = document.getElementById('reg-mobile').value.trim();
+    if (!mobile || mobile.length < 10) {
+      alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+    const btnText = document.getElementById('sendOtpBtnText');
+    btnText.textContent = 'OTP Sent';
+    const statusHint = document.getElementById('otpStatusHint');
+    statusHint.textContent = 'Active 6-digit OTP dispatched to +91 ' + mobile;
+    statusHint.classList.add('text-[#10b981]');
+    alert('Konark Security OTP dispatched to +91 ' + mobile + '. Use demo code: 7 8 2 4 9 0');
+  }
+
+  function resendOtpCountdown() {
+    alert('New OTP has been requested and sent via SMS / WhatsApp.');
+  }
+
+  function quickFillOtp() {
+    const inputs = document.querySelectorAll('.otp-input');
+    const demoCode = ['7', '8', '2', '4', '9', '0'];
+    inputs.forEach((input, index) => {
+      input.value = demoCode[index] || '';
+    });
+    const statusHint = document.getElementById('otpStatusHint');
+    statusHint.textContent = 'OTP Verified Successfully!';
+    statusHint.classList.remove('text-[#8e909f]');
+    statusHint.classList.add('text-[#10b981]', 'font-semibold');
+  }
+
+  function checkPasswordStrength(val) {
+    const bar = document.getElementById('pwdStrengthBar');
+    const text = document.getElementById('pwdStrengthText');
+    if (!bar || !text) return;
+    if (val.length < 6) {
+      bar.style.width = '25%';
+      bar.className = 'h-full bg-red-500 transition-all duration-300';
+      text.textContent = 'Weak';
+      text.className = 'font-label text-[10px] text-red-400 uppercase tracking-wider';
+    } else if (val.length < 9) {
+      bar.style.width = '65%';
+      bar.className = 'h-full bg-[#f7df94] transition-all duration-300';
+      text.textContent = 'Moderate';
+      text.className = 'font-label text-[10px] text-[#f7df94] uppercase tracking-wider';
+    } else {
+      bar.style.width = '100%';
+      bar.className = 'h-full bg-[#10b981] transition-all duration-300';
+      text.textContent = 'Strong Security';
+      text.className = 'font-label text-[10px] text-[#10b981] uppercase tracking-wider';
+    }
+  }
+
+  function handleRegistrationSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('regSubmitBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span><span>Registering &amp; Validating OTP...</span>';
+    setTimeout(() => {
+      alert('Registration successful for ' + currentRegRole + '! Your account is now verified. Logging into catalog...');
+      window.location.href = 'https://stitch.google.com/preview/16551520363935004530?node-id=bb590b69c902401e9b51daae9b948e75';
+    }, 1200);
+  }
+
+  function sendRecoveryOtp() {
+    const contact = document.getElementById('recovery-contact').value.trim();
+    if (!contact) {
+      alert('Please enter your registered mobile number or work email.');
+      return;
+    }
+    alert('Password reset OTP sent to ' + contact + '. (Demo code: 442918)');
+    document.getElementById('recovery-otp').value = '442918';
+  }
+
+  function submitRecovery() {
+    const contact = document.getElementById('recovery-contact').value.trim();
+    const newPwd = document.getElementById('recovery-new-password').value.trim();
+    if (!contact || !newPwd) {
+      alert('Please fill out all fields to complete the reset.');
+      return;
+    }
+    alert('Password updated successfully for ' + contact + '. You can now sign in.');
+    togglePasswordModal(false);
+  }
+
+  // Auto-focus next input for 6-digit OTP fields
+  document.querySelectorAll('.otp-input').forEach((input, index, inputs) => {
+    input.addEventListener('input', (e) => {
+      if (input.value.length === 1 && index < inputs.length - 1) {
+        inputs[index + 1].focus();
+      }
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Backspace' && !input.value && index > 0) {
+        inputs[index - 1].focus();
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+</body></html>
